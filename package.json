@@ -1,0 +1,19 @@
+{
+  "name": "thermite_be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aadhar-UIDAI/thermite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aadhar-UIDAI/thermite/issues"
+  },
+  "homepage": "https://github.com/Aadhar-UIDAI/thermite#readme"
+}
