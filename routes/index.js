@@ -48,6 +48,9 @@ router.post('/register',function(req,res){
 router.post('/login', function(req, res) {
     maincontroller.login(req,res);
 });
+router.post('/auth', function(req, res) {
+    maincontroller.authenticator(req,res);
+});
 
 
     /*
