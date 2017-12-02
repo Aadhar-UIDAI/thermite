@@ -25,20 +25,7 @@ router.use(bodyParser.json({type: 'application/vnd.api+json'}));
 });*/
 
 router.post('/logout', function(req, res){
-    var id=req.body.userid;
-
-    User.getUserById(id, function(err, user) {
-        if(user)
-        {
-            console.log("Clearing token");
-            user.token = null;
-            res.sendStatus(200);
-        }
-        else
-        {
-            res.sendStatus(403);
-        }
-    });
+    maincontroller.logout(req,res);
 });
 
 router.post('/register',function(req,res){

@@ -122,5 +122,32 @@
             console.log(err);
         }
         res.status(200);
+    };
+    module.exports.logout=function (req,res) {
+        try{
+            console.log("Logging out the Token "+req.body.token);
+            var token=req.body.token;
+            User.getUserByToken(token, function(err, user) {
+                if(user)
+                {
+                    user.token.expiry = null;
+                    user.token.currentToken = null;
+                    user.status.online=false;
+                    user.save(function (err) {
+                        if(err) {
+                            console.error('ERROR!');
+                        }
+                    });
+                    res.sendStatus(200);
+                }
+                else
+                {
+                    res.sendStatus(403);
+                }
+            });
+        }
+        catch(err){
+
+        }
     }
 })();
